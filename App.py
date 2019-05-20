@@ -2,7 +2,7 @@
 from nltk import word_tokenize
 import ast
 import random
-import scriptures
+# import scriptures
 import sys
 import time
 import urllib
@@ -101,10 +101,10 @@ def complexify_verse(complexity, verse_final):
 # str_verse = verse[1:-1]
 # new_vers = complexify_verse(2,str_verse)
 # print(new_vers)
-# print(Dbt.find_verse("DBY", "Jean", 3, 16))
-verses = get_verse(message, read_words)
-print(verses)
-for verse in verses:
-   print("{} {} - verset {} : {}".format(verse.chapter.book.name, verse.chapter.chapter_number, verse.verse_number, verse.text))
+# # print(Dbt.find_verse("DBY", "Jean", 3, 16))
+# verses = get_verse(message, read_words)
+# print(verses)
+# for verse in verses:
+#    print("{} {} - verset {} : {}".format(verse.chapter.book.name, verse.chapter.chapter_number, verse.verse_number, verse.text))
 
 # print(Dbt.get_random_verse("DBY"))
