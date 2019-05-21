@@ -1,2 +1,2 @@
-web: gunicorn app:app --log-file -
+web: gunicorn chatfuel-memoverset.wsgi:application  --log-file -
 
