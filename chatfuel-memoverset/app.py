@@ -25,7 +25,7 @@ from json import dumps
 # from App import *
 # from versify.util.Dbt import Dbt
 app = Flask(__name__)
-app = Api(chatfuel)
+app = Api(app)
 
 
 #print(Dbt.find_verse("DBY", "1Tim", 2, 1))
