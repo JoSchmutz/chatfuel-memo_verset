@@ -1,8 +1,8 @@
 import os
 
-from app import app
+from chatfuel import chatfuel
 
 
 if __name__ == '__main__':
-    app.debug = True
-    app.run()
+    chatfuel.debug = True
+    chatfuel.run()
