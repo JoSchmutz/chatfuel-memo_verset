@@ -1,5 +1,5 @@
 ############# Made by Willy Konguem ##############
-from nltk import word_tokenize
+# from nltk import word_tokenize
 import ast
 import random
 # import scriptures
