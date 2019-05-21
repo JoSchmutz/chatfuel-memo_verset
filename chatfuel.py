@@ -68,7 +68,6 @@ class Texte_complexified(Resource):
         result =  {"messages": [{"text": new_vers}]}
         return jsonify(result)
 
-
 class Verse_ref(Resource):
     def get(self, livre, chapitre, verset):
         # verse_final
@@ -89,13 +88,10 @@ class Verse_ref(Resource):
 api.add_resource(Verses, '/verses')
 api.add_resource(Verse_ref, '/save_verse_txt/<livre>/<chapitre>/<verset>') #cette route permet de sauvegarder dans un attribut le verset en question
 api.add_resource(Verse_complexified, '/complexity/<livre>/<chapitre>/<verset>/<complexity>')
-
-
-
 api.add_resource(Texte_complexified, '/text/<verse_txt>') #ici on doit renvoyer le texte complexifié
 
-
-if __name__ == '__main__':
-     app.run(port='5002')
+#
+# if __name__ == '__main__':
+#      app.run(port='5002')
 
 # Dans l'url utiliser ?variable=value
