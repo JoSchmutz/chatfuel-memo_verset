@@ -8,7 +8,7 @@ import time
 import urllib
 
 from urllib.request import urlopen
-from flask import Flask, request, session, render_template,
+from flask import Flask, request, session, render_template
 from flask_restful import Resource, Api
 from flask_jsonpify import jsonify
 from sqlalchemy import create_engine
@@ -177,6 +177,25 @@ class Verse_ref(Resource):
         result =  {"set_attributes": {"verse_txt": str_verse},"messages": [{"text": str_verse}]}
         return jsonify(result)
 
+class Test(Resource):
+    def get(self):
+        # verse_final
+        # complexified_verse = complexify_verse(complex, verse_final)
+        # complexified_verse = complexify_verse(complexity, verse)
+        # verse_txt_from_verse_ref() #write function that get verse ref
+        # verse = str(Dbt.find_verse("DBY", "Jean", 3, 16))
+        verse = str(Dbt.find_verse("DBY", "Jean", 3,16))
+        str_verse = verse[1:-1]
+        print("verse_ref_sent = ", str_verse)
+
+        # new_vers = complexify_verse(int(complexity), str_verse)
+        # print("new verse = ", new_vers)
+
+        result =  {"set_attributes": {"verse_txt": str_verse},"messages": [{"text": str_verse}]}
+        return jsonify(result)
+
+
+api.add_resource(Test, '/')
 api.add_resource(Verses, '/verses')
 api.add_resource(Verse_ref, '/save_verse_txt/<livre>/<chapitre>/<verset>') #cette route permet de sauvegarder dans un attribut le verset en question
 api.add_resource(Verse_complexified, '/complexity/<livre>/<chapitre>/<verset>/<complexity>')
